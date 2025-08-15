@@ -1,84 +1,86 @@
-#  Plant Disease Prediction
+# Plant Disease Prediction Application
 
-This project is a **Plant Disease Prediction Application** that uses a deep learning model to classify plant leaf images into different disease categories.  
-It is trained on a dataset from **Kaggle**, which contains labeled images of healthy and diseased plant leaves.
-
-##  Dataset
-
-The dataset used in this project must be **downloaded manually** from Kaggle:  
-🔗 [PlantVillage Dataset on Kaggle](https://www.kaggle.com/emmarex/plantdisease)
-
-Once downloaded, extract the dataset and arrange it in the following directory structure inside your project:
-Plant_disease_project/
-│
-│ ├── train/
-│ ├── test/
-│ └── valid/
-│
-├── model_training.ipynb
-├── requirement.txt
-├── app.py
-└── README.md
+![Streamlit App](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python)
 
 
-- **train/** → Contains training images.
-- **test/** → Contains testing images.
-- **valid/** → Contains validation images.
 
-## ⚙️ Installation
+This app utilizes a Kaggle dataset to train a machine learning model for predicting plant diseases from images. Users can preprocess data, train the model, and perform predictions on new plant images. The project is designed for educational and practical use in plant health monitoring.
 
-1. **Clone the repository**  
+
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Model Training](#model-training)
+- [Project Structure](#project-structure)
+
+
+## Overview
+
+This app uses the classic Titanic dataset from Kaggle to train a Random Forest classifier. Users can explore the data, visualize survival patterns, input custom passenger details for predictions, and review model performance metrics. Built as part of a machine learning deployment assignment, it showcases Streamlit for interactive UIs and GitHub/Streamlit Cloud for version control and hosting.
+
+## Features
+
+- **Data Preprocessing**: Prepare and split the dataset into training, testing, and validation sets.
+- **Model Training**:  Train a machine learning model using the processed dataset.
+- **Prediction**: Perform real-time disease prediction on new plant images.
+- **Model Performance**: Accuracy, classification report, and confusion matrix visualization.
+- **Error Handling**: User-friendly messages for invalid inputs or loading issues.
+
+
+
+## Installation
+
+1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/plant-disease-prediction.git
-   cd plant-disease-prediction
-Install dependencies
-Make sure you have Python 3.8+ installed, then run:
+   git clone https://github.com/shehanjay2000/Plant-Disease-Prediction-Application.git
+   cd Disease-Prediction-Application
+   ```
 
-pip install -r requirement.txt
+2. **Set Up Virtual Environment** (Recommended):
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
 
-Usage
+3. **Install Dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Train the Model
-Open and run model_training.ipynb in Jupyter Notebook to train the model.
+4. **Download Dataset**:
+   - Get the dataset from Kaggle Plant Disease Dataset
+   - Extract and place it in the data/ folder with train/, test/, and valid/ subdirectories.
 
-Run the Application
+5. **Train the Model** (If not already done):
+   - Run the Jupyter notebook: `jupyter notebook notebooks/model_training.ipynb`.
+   - This generates `model.keras`.
 
-streamlit run app.py
 
 
-Upload Leaf Images
-Upload an image of a leaf in the application interface to get disease predictions.
+## Model Training
 
-🛠 Requirements
+The model is trained in `model_training.ipynb` using TensorFlow:
 
-The main libraries required for this project are:
+- **Preprocessing**: Image resizing, normalization, and dataset splitting
+- **Training**: Train the model with the dataset in train/.
+- **Saving**: Save the trained model to model.keras.
 
-TensorFlow 2.10.0
+Run the notebook to retrain if needed.
 
-scikit-learn 1.3.0
 
-NumPy 1.24.3
 
-Matplotlib 3.7.2
+## Project Structure
 
-Seaborn 0.13.0
+```
+plant-disease-prediction/
+├── test/                   # Test dataset images
+├── train/                  # Training dataset images
+├── valid/                  # Validation dataset images
+├── model_training.ipynb     # Model training script
+└── requirements.txt        # Python dependencies
+```
 
-Pandas 2.1.0
-
-Streamlit
-
-Librosa 0.10.1
-
-You can find the complete list in requirement.txt.
-
-Model
-
-Model Type: CNN (Convolutional Neural Network)
-
-Dataset Split:
-
-Training: 70%
-
-Validation: 15%
-
-Testing: 15%
