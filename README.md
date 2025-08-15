@@ -1,84 +1,56 @@
-#  Plant Disease Prediction
+Plant Disease Prediction Application
 
-This project is a **Plant Disease Prediction Application** that uses a deep learning model to classify plant leaf images into different disease categories.  
-It is trained on a dataset from **Kaggle**, which contains labeled images of healthy and diseased plant leaves.
+Overview
 
-##  Dataset
+This project develops a machine learning model to predict plant diseases using images from a Kaggle dataset. The application processes plant images to classify diseases, aiding in agricultural disease management.
 
-The dataset used in this project must be **downloaded manually** from Kaggle:  
-🔗 [PlantVillage Dataset on Kaggle](https://www.kaggle.com/emmarex/plantdisease)
+Dataset
 
-Once downloaded, extract the dataset and arrange it in the following directory structure inside your project:
-Plant_disease_project/
-│
-│ ├── train/
-│ ├── test/
-│ └── valid/
-│
-├── model_training.ipynb
-├── requirement.txt
-├── app.py
-└── README.md
+The dataset used in this project must be downloaded from Kaggle. You can access it here. After downloading, place the dataset files in the data/ directory as described in the project structure below.
+
+Installation
 
 
-- **train/** → Contains training images.
-- **test/** → Contains testing images.
-- **valid/** → Contains validation images.
 
-## ⚙️ Installation
+Clone the repository:
 
-1. **Clone the repository**  
-   ```bash
-   git clone https://github.com/your-username/plant-disease-prediction.git
-   cd plant-disease-prediction
-Install dependencies
-Make sure you have Python 3.8+ installed, then run:
-
-pip install -r requirement.txt
-
-Usage
-
-Train the Model
-Open and run model_training.ipynb in Jupyter Notebook to train the model.
-
-Run the Application
-
-streamlit run app.py
+git clone <https://github.com/shehanjay2000/Plant-disease-prediction-application.git>
+cd plant-disease-prediction
 
 
-Upload Leaf Images
-Upload an image of a leaf in the application interface to get disease predictions.
 
-🛠 Requirements
+Install the required dependencies:
 
-The main libraries required for this project are:
+pip install -r requirements.txt
 
-TensorFlow 2.10.0
 
-scikit-learn 1.3.0
 
-NumPy 1.24.3
+Download the Kaggle dataset and extract it into the data/ directory.
 
-Matplotlib 3.7.2
+Project Structure
 
-Seaborn 0.13.0
+plant-disease-prediction/
+├── data/
+│   ├── train/              # Training dataset images
+│   ├── test/               # Test dataset images
+│   ├── valid/              # Validation dataset images
+├── notebooks/              # Jupyter notebooks 
+├── requirements.txt        # Python dependencies
+├── README.md               # Project documentation
+└── main.py                 # Main script to run the application
 
-Pandas 2.1.0
 
-Streamlit
 
-Librosa 0.10.1
+Dependencies
 
-You can find the complete list in requirement.txt.
+Python 3.8+
+TensorFlow or 
+NumPy, Pandas
+See requirements.txt for the full list of dependencies.
 
-Model
 
-Model Type: CNN (Convolutional Neural Network)
+Notes
 
-Dataset Split:
+Ensure the Kaggle dataset is properly structured in the data/ directory with train/, test/, and valid/ subdirectories.
 
-Training: 70%
 
-Validation: 15%
-
-Testing: 15%
