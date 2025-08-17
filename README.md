@@ -20,7 +20,7 @@ This app utilizes a Kaggle dataset to train a machine learning model for predict
 
 ## Overview
 
-This app uses the classic Titanic dataset from Kaggle to train a Random Forest classifier. Users can explore the data, visualize survival patterns, input custom passenger details for predictions, and review model performance metrics. Built as part of a machine learning deployment assignment, it showcases Streamlit for interactive UIs and GitHub/Streamlit Cloud for version control and hosting.
+This repository contains the source code for a Plant Disease Prediction Application. The project utilizes a machine learning model to identify common plant diseases from images. The application is built with a Python backend and provides a user-friendly interface to upload images and receive instant predictions.ting.
 
 ## Features
 
@@ -48,7 +48,7 @@ This app uses the classic Titanic dataset from Kaggle to train a Random Forest c
 
 3. **Install Dependencies**:
    ```bash
-   pip install -r requirements.txt
+   pip install -r requirement.txt
    ```
 
 4. **Download Dataset**:
@@ -56,8 +56,8 @@ This app uses the classic Titanic dataset from Kaggle to train a Random Forest c
    - Extract and place it in the data/ folder with train/, test/, and valid/ subdirectories.
 
 5. **Train the Model** (If not already done):
-   - Run the Jupyter notebook: `jupyter notebook notebooks/model_training.ipynb`.
-   - This generates `model.keras`.
+   - Run the Jupyter notebook: `/model_training.ipynb`.
+   - This generates `trained_model.keras`.
 
 
 
@@ -67,7 +67,7 @@ The model is trained in `model_training.ipynb` using TensorFlow:
 
 - **Preprocessing**: Image resizing, normalization, and dataset splitting
 - **Training**: Train the model with the dataset in train/.
-- **Saving**: Save the trained model to model.keras.
+- **Saving**: Save the trained model to trained_model.keras
 
 Run the notebook to retrain if needed.
 
@@ -77,10 +77,16 @@ Run the notebook to retrain if needed.
 
 ```
 plant-disease-prediction/
-├── test/                   # Test dataset images
-├── train/                  # Training dataset images
-├── valid/                  # Validation dataset images
-├── model_training.ipynb     # Model training script
-└── requirements.txt        # Python dependencies
+├── test/                # Test dataset images
+├── train/               # Training dataset images
+├── valid/               # Validation dataset images
+├── model_training.ipynb    # Model training script
+├── README.md            # Project documentation
+├── requirements.txt     # Python dependencies
+├── trained_model.keras  # Trained model file
+├── training_history.json # Training history
+├── home_page.jpg        # Homepage image
+├── main.py              # Main script
+├── Test_Plant_Disease.ipynb # Test scripts
 ```
 
