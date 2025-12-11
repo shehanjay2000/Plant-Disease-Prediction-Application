@@ -1,15 +1,31 @@
 import streamlit as st
 import tensorflow as tf
 import numpy as np
+import os
+import warnings
+
+# Suppress TensorFlow warnings
+warnings.filterwarnings('ignore')
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
+
+# Cache the model to load only once
+@st.cache_resource
+def load_model():
+    return tf.keras.models.load_model('trained_model.keras')
 
 
 # model prediction
 def model_prediction(test_image):
-    model = tf.keras.models.load_model('trained_model.keras')
-    image = tf.keras.preprocessing.image.load_img(test_image,target_size=(128,128))
+    if test_image is None:
+        st.error("Please upload an image first!")
+        return None
+    
+    model = load_model()
+    image = tf.keras.preprocessing.image.load_img(test_image, target_size=(128, 128))
     input_array = tf.keras.preprocessing.image.img_to_array(image)
     input_array = np.array([input_array]) # convert single image to a batch 
-    prediction = model.predict(input_array)
+    prediction = model.predict(input_array, verbose=0)
     result_index = np.argmax(prediction)
     return result_index
 
@@ -106,4 +122,6 @@ elif(app_mode=="Disease Recognition"):
     'Tomato___Tomato_Yellow_Leaf_Curl_Virus',
     'Tomato___Tomato_mosaic_virus',
     'Tomato___healthy']
-        st.success("Model is Predicting it's a {}".format(class_name[result_index]))
+            if result_index is not None:
+                st.success("Model is Predicting it's a {}".format(class_name[result_index]))
+
